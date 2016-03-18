@@ -43,3 +43,11 @@ function featured(){
 };
 
 featured();
+
+function clearance(){
+    var lastProduct = _.last(products);
+    var imageUrl = lastProduct["picture_url"];
+    $("#clearancePic").attr("src", imageUrl);
+};
+
+clearance();
