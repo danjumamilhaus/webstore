@@ -54,7 +54,7 @@ clearance();
 
 /* Two versions of _.filter, neither working. */
 
-function filterBooks(){
+/* function filterBooks(){
     _.filter(products, function() {
         if (products["category"] === "books") {
             $("#filter").append(products["name"]);
@@ -62,17 +62,19 @@ function filterBooks(){
     });
 };
 
-filterBooks();
+filterBooks(); */
 
-/* Second Version */
+/* Working Version */
 
 var filterBooks = _.filter(products, function(index) {
-    return index === "books";
+    return index.category === "books";
 });
 
-$("#filter").append(filterBooks);
+var printBookName = _.each(filterBooks, function(index) {
+    $("#filter").append("<br>" + index.name);
+});
 
-/* Yet another attempt */
+/* Yet another attempt 
 
 function booksFilter(){
     var books = _.filter(products, function(index) {
@@ -85,12 +87,7 @@ function booksFilter(){
 
 booksFilter();
 
-
-
-
-
-
-
+function bookFilt() */
 
 
 
