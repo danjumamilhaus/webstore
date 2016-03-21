@@ -72,7 +72,18 @@ var filterBooks = _.filter(products, function(index) {
 
 $("#filter").append(filterBooks);
 
+/* Yet another attempt */
 
+function booksFilter(){
+    var books = _.filter(products, function(index) {
+        if (index === "books"){
+            return index["name"];
+        };
+    });
+    $("#filter").append(books);
+};
+
+booksFilter();
 
 
 
