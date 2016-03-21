@@ -52,19 +52,7 @@ function clearance(){
 
 clearance();
 
-/* Two versions of _.filter, neither working. */
-
-/* function filterBooks(){
-    _.filter(products, function() {
-        if (products["category"] === "books") {
-            $("#filter").append(products["name"]);
-        }
-    });
-};
-
-filterBooks(); */
-
-/* Working Version */
+/* _.filter working */
 
 var filterBooks = _.filter(products, function(index) {
     return index.category === "books";
@@ -74,20 +62,7 @@ var printBookName = _.each(filterBooks, function(index) {
     $("#filter").append("<br>" + index.name);
 });
 
-/* Yet another attempt 
 
-function booksFilter(){
-    var books = _.filter(products, function(index) {
-        if (index === "books"){
-            return index["name"];
-        };
-    });
-    $("#filter").append(books);
-};
-
-booksFilter();
-
-function bookFilt() */
 
 
 
