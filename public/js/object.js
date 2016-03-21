@@ -52,6 +52,7 @@ function clearance(){
 
 clearance();
 
+
 /* _.filter working
 
 var filterBooks = _.filter(products, function(index) {
@@ -62,7 +63,8 @@ var printBookName = _.each(filterBooks, function(index) {
     $("#filter").append("<br>" + index.name);
 }); */
 
-/* _.reject */
+
+/* _.reject
 
 var filterBooks = _.filter(products, function(index) {
     return index.category === "books";
@@ -74,6 +76,25 @@ var rejectPrice = _.reject(filterBooks, function(index) {
 
 var printBookName = _.each(rejectPrice, function(index) {
     $("#filter").append("<br>" + index.name);
+}); */
+
+
+/* _.uniq */
+
+var filterBooks = _.filter(products, function(index) {
+    return index.category === "books";
+});
+
+var rejectPrice = _.reject(filterBooks, function(index) {
+    return index.price > 20;
+});
+
+var printBookName = _.each(rejectPrice, function(index) {
+    $("#filter").append("<br>" + index.name);
+});
+
+var printSellingPoints = _.each(rejectPrice, function(index) {
+    $("#uniq").append("<br>" + _.uniq(index.selling_points));
 });
 
 
