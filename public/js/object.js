@@ -51,3 +51,35 @@ function clearance(){
 };
 
 clearance();
+
+/* Two versions of _.filter, neither working. */
+
+function filterBooks(){
+    _.filter(products, function() {
+        if (products["category"] === "books") {
+            $("#filter").append(products["name"]);
+        }
+    });
+};
+
+filterBooks();
+
+/* Second Version */
+
+var filterBooks = _.filter(products, function(index) {
+    return index === "books";
+});
+
+$("#filter").append(filterBooks);
+
+
+
+
+
+
+
+
+
+
+
+
